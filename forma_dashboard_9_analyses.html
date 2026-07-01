@@ -1,0 +1,302 @@
+<h2 class="sr-only">Dashboard regulamentar para as 9 análises Forma Site Design — thresholds legais portugueses por grupo de análise</h2>
+<style>
+:root{
+  --fs-bg:#fbfaf7;
+  --fs-card:#fffefa;
+  --fs-card-soft:#f8f6f1;
+  --fs-line:#e6e0d6;
+  --fs-line-strong:#d9d0c4;
+  --fs-text:#4b4945;
+  --fs-muted:#74706a;
+  --fs-soft:#9b968f;
+  --fs-blue:#6b91d3;
+  --fs-blue-bg:#eaf2ff;
+  --fs-blue-bd:#abc5ee;
+  --fs-blue-tx:#2f5e9f;
+  --fs-green:#78a95f;
+  --fs-green-bg:#edf7e7;
+  --fs-green-bd:#acd197;
+  --fs-green-tx:#477534;
+  --fs-orange:#b28a5b;
+  --fs-orange-bg:#fff0df;
+  --fs-orange-bd:#ddb67d;
+  --fs-orange-tx:#7d5930;
+  --fs-yellow:#d1b84a;
+  --fs-yellow-bg:#fff8d9;
+  --fs-yellow-bd:#e3ca69;
+  --fs-yellow-tx:#7a6718;
+  --fs-red:#d77979;
+  --fs-red-bg:#fdeced;
+  --fs-red-tx:#a84e4e;
+  --fs-shadow:0 8px 26px rgba(77,67,55,.06);
+  --fs-radius:13px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Aptos,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--fs-text);background:var(--fs-bg)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.forma-ui{max-width:1120px;margin:0 auto;padding:18px 12px 28px;background:linear-gradient(180deg,#fcfbf8 0%,#f8f6f1 100%)}
+.topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;margin-bottom:14px}
+.eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fs-soft);font-weight:700;margin-bottom:5px}
+.title{font-size:20px;line-height:1.15;font-weight:650;color:#373532;letter-spacing:-.02em}
+.subtitle{font-size:12px;line-height:1.5;color:var(--fs-muted);margin-top:6px;max-width:760px}
+.stats{display:flex;gap:7px;justify-content:flex-end;flex-wrap:wrap}
+.stat{min-width:78px;text-align:center;border:1px solid var(--fs-line);background:rgba(255,255,255,.7);border-radius:11px;padding:8px 10px;box-shadow:0 3px 12px rgba(77,67,55,.035)}
+.stat strong{display:block;font-size:18px;line-height:1;color:#3d3a36;font-weight:700}
+.stat span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--fs-soft);margin-top:4px;font-weight:650}
+.controls{position:sticky;top:0;z-index:3;background:rgba(251,250,247,.92);backdrop-filter:blur(10px);padding:10px 0 12px;margin-bottom:12px;border-bottom:1px solid rgba(230,224,214,.72)}
+.searchline{display:grid;grid-template-columns:minmax(210px,1fr) auto;gap:8px;align-items:center;margin-bottom:8px}
+.search{height:34px;border:1px solid var(--fs-line);background:#fffdf9;border-radius:999px;padding:0 13px;font-size:12px;color:var(--fs-text);outline:none;box-shadow:inset 0 1px 2px rgba(77,67,55,.03)}
+.search:focus{border-color:#b9aa95;box-shadow:0 0 0 3px rgba(177,158,132,.15)}
+.reset{height:34px;border:1px solid var(--fs-line);background:#fffdf9;border-radius:999px;padding:0 13px;font-size:11px;font-weight:700;color:var(--fs-muted);cursor:pointer;transition:.15s}
+.reset:hover{border-color:var(--fs-line-strong);color:var(--fs-text)}
+.analysis-nav{display:flex;gap:6px;overflow:auto;padding-bottom:2px;scrollbar-width:thin}
+.navchip{border:1px solid var(--fs-line);background:#fffefa;color:var(--fs-muted);border-radius:999px;padding:6px 9px;font-size:11px;font-weight:650;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:.15s;box-shadow:0 2px 8px rgba(77,67,55,.025)}
+.navchip:hover{transform:translateY(-1px);border-color:var(--fs-line-strong)}
+.navchip.active{color:#373532;background:#f2eee7;border-color:#cfc4b5;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.navdot{width:7px;height:7px;border-radius:50%;background:var(--chip-color,#999);box-shadow:0 0 0 3px color-mix(in srgb,var(--chip-color,#999) 18%,transparent)}
+.cards{display:flex;flex-direction:column;gap:10px}.card{--accent:#7f9ac8;--accent-bg:#eff4fd;background:linear-gradient(135deg,#fffefa 0%,#fffefa 58%,#faf8f3 100%);border:1px solid var(--fs-line);border-left:5px solid var(--accent);border-radius:var(--fs-radius);display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,.98fr);overflow:hidden;box-shadow:var(--fs-shadow);transition:opacity .18s,transform .18s,border-color .18s}.card:hover{transform:translateY(-1px);border-color:#d6ccbe}.card.hidden{display:none}.left{padding:16px 22px 16px 18px;border-right:1px solid var(--fs-line);min-width:0}.right{padding:16px 18px;background:linear-gradient(180deg,rgba(255,255,255,.36),rgba(248,246,241,.24));min-width:0}.card-head{display:flex;align-items:center;gap:9px;margin-bottom:8px}.icon{width:18px;height:18px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;color:var(--accent);font-size:14px;background:var(--accent-bg);font-weight:700;flex-shrink:0}.ctitle{font-size:15px;font-weight:700;line-height:1.25;color:#46433f;letter-spacing:-.01em}.cdesc{font-size:12px;color:#6f6a63;line-height:1.48;max-width:520px;margin-bottom:10px}.tags{display:flex;gap:5px;flex-wrap:wrap;margin:2px 0 10px}.tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid transparent;display:inline-flex;align-items:center;gap:4px;line-height:1.45}.tag:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.7}.blue{background:var(--fs-blue-bg);border-color:var(--fs-blue-bd);color:var(--fs-blue-tx)}.green{background:var(--fs-green-bg);border-color:var(--fs-green-bd);color:var(--fs-green-tx)}.orange{background:var(--fs-orange-bg);border-color:var(--fs-orange-bd);color:var(--fs-orange-tx)}.yellow{background:var(--fs-yellow-bg);border-color:var(--fs-yellow-bd);color:var(--fs-yellow-tx)}.gray{background:#f3f1ec;border-color:#d8d1c8;color:#706a62}.law{font-size:10.5px;color:#7b766f;line-height:1.5;font-weight:500;margin-top:2px}.law b{color:#605b54;font-weight:750}.note{font-size:10.5px;color:#8b867d;line-height:1.55;margin-top:11px;padding-top:11px;border-top:1px solid var(--fs-line)}.section{font-size:10.5px;color:#9a958d;letter-spacing:.05em;text-transform:uppercase;font-weight:800;line-height:1.25;margin-bottom:8px}.section:not(:first-child){margin-top:14px}.row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid rgba(230,224,214,.86);font-size:11.5px;min-height:26px}.row:last-child{border-bottom:none}.label{color:#68635d;line-height:1.28}.value{color:#484641;font-weight:800;white-space:nowrap;text-align:right}.badge{font-size:10px;font-weight:750;border-radius:5px;padding:2px 6px;white-space:nowrap;line-height:1.25}.ok{background:var(--fs-green-bg);color:var(--fs-green-tx)}.warn{background:var(--fs-orange-bg);color:var(--fs-orange-tx)}.bad{background:var(--fs-red-bg);color:var(--fs-red-tx)}.neutral{background:#f1eee8;color:#7d766d}.scale{display:grid;border-radius:6px;overflow:hidden;height:23px;margin:0 0 9px;border:1px solid rgba(0,0,0,.04)}.scale span{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}.scale.energy{grid-template-columns:repeat(7,1fr)}.scale.carbon{grid-template-columns:repeat(6,1fr)}.grade{display:grid;grid-template-columns:10px minmax(44px,auto) minmax(0,1fr) auto;gap:7px;align-items:center;padding:5px 0;border-bottom:1px solid rgba(230,224,214,.86);font-size:11.5px}.grade:last-child{border-bottom:none}.gdot{width:8px;height:8px;border-radius:2px}.glabel{font-weight:800;color:#514e49;white-space:nowrap}.gval{color:#68635d;line-height:1.25}.empty{display:none;text-align:center;border:1px dashed var(--fs-line-strong);border-radius:var(--fs-radius);padding:24px;color:var(--fs-soft);font-size:12px;background:#fffefa}.legend{margin-top:14px;padding:11px 2px 0;border-top:1px solid var(--fs-line);display:flex;gap:14px;flex-wrap:wrap}.legend-item{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:#878178}.legend-dot{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.card[data-analysis="area"]{--accent:var(--fs-blue);--accent-bg:var(--fs-blue-bg)}.card[data-analysis="sun"]{--accent:var(--fs-green);--accent-bg:var(--fs-green-bg)}.card[data-analysis="daylight"]{--accent:var(--fs-green);--accent-bg:var(--fs-blue-bg)}.card[data-analysis="wind"]{--accent:var(--fs-orange);--accent-bg:#f3eefb}.card[data-analysis="microclimate"]{--accent:var(--fs-yellow);--accent-bg:var(--fs-yellow-bg)}.card[data-analysis="operational"]{--accent:var(--fs-green);--accent-bg:var(--fs-green-bg)}.card[data-analysis="solar"]{--accent:var(--fs-green);--accent-bg:var(--fs-green-bg)}.card[data-analysis="embodied"]{--accent:var(--fs-orange);--accent-bg:var(--fs-orange-bg)}.card[data-analysis="noise"]{--accent:var(--fs-yellow);--accent-bg:var(--fs-yellow-bg)}
+@media(max-width:820px){.forma-ui{padding:12px 8px}.topbar{grid-template-columns:1fr}.stats{justify-content:flex-start}.searchline{grid-template-columns:1fr}.card{grid-template-columns:1fr}.left{border-right:0;border-bottom:1px solid var(--fs-line);padding:15px}.right{padding:15px}.row{grid-template-columns:minmax(0,1fr) auto}.row .badge{grid-column:2}.grade{grid-template-columns:10px minmax(42px,auto) minmax(0,1fr)}.grade .badge{grid-column:3;justify-self:start}.title{font-size:17px}}
+@media print{body,.forma-ui{background:#fff}.controls{position:static;display:none}.card{break-inside:avoid;box-shadow:none}.legend{display:none}}
+</style>
+
+<div class="forma-ui" id="forma-ui">
+  <div class="topbar">
+    <div>
+      <div class="eyebrow">Forma Site Design · Portugal Continental</div>
+      <div class="title">Dashboard regulamentar por grupo de análise</div>
+      <div class="subtitle">Leitura rápida dos principais thresholds legais e técnicos associados às 9 análises preditivas do Forma, em fase de conceito.</div>
+    </div>
+    <div class="stats" aria-label="Resumo do dashboard">
+      <div class="stat"><strong>9</strong><span>análises</span></div>
+      <div class="stat"><strong>4</strong><span>famílias legais</span></div>
+      <div class="stat"><strong>PT</strong><span>contexto</span></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="searchline">
+      <input class="search" id="searchBox" type="search" placeholder="Pesquisar por análise, diploma, limite ou indicador…" oninput="applyFilters()">
+      <button class="reset" type="button" onclick="setAnalysis('all')">Limpar filtros</button>
+    </div>
+    <div class="analysis-nav" aria-label="Filtros por grupo de análise">
+      <button class="navchip active" data-analysis-filter="all" onclick="setAnalysis('all')"><span class="navdot" style="--chip-color:#b7aa99"></span>Todos</button>
+      <button class="navchip" data-analysis-filter="area" onclick="setAnalysis('area')"><span class="navdot" style="--chip-color:#6b91d3"></span>Área</button>
+      <button class="navchip" data-analysis-filter="sun" onclick="setAnalysis('sun')"><span class="navdot" style="--chip-color:#78a95f"></span>Sol</button>
+      <button class="navchip" data-analysis-filter="daylight" onclick="setAnalysis('daylight')"><span class="navdot" style="--chip-color:#78a95f"></span>Luz natural</button>
+      <button class="navchip" data-analysis-filter="wind" onclick="setAnalysis('wind')"><span class="navdot" style="--chip-color:#b28a5b"></span>Vento</button>
+      <button class="navchip" data-analysis-filter="microclimate" onclick="setAnalysis('microclimate')"><span class="navdot" style="--chip-color:#d1b84a"></span>Microclima</button>
+      <button class="navchip" data-analysis-filter="operational" onclick="setAnalysis('operational')"><span class="navdot" style="--chip-color:#78a95f"></span>Energia operacional</button>
+      <button class="navchip" data-analysis-filter="solar" onclick="setAnalysis('solar')"><span class="navdot" style="--chip-color:#78a95f"></span>Energia solar</button>
+      <button class="navchip" data-analysis-filter="embodied" onclick="setAnalysis('embodied')"><span class="navdot" style="--chip-color:#b28a5b"></span>Carbono incorporado</button>
+      <button class="navchip" data-analysis-filter="noise" onclick="setAnalysis('noise')"><span class="navdot" style="--chip-color:#d1b84a"></span>Ruído</button>
+    </div>
+  </div>
+
+  <div class="cards" id="cards">
+    <article class="card" data-analysis="area" data-search="area metrics area analysis areas métricas urbanísticas footprint densidade implantação gfa pdm rjue rjigt rgeu impermeabilização estacionamento">
+      <div class="left">
+        <div class="card-head"><span class="icon">▣</span><h3 class="ctitle">Area Metrics / Area Analysis</h3></div>
+        <p class="cdesc">Áreas, métricas urbanísticas, footprint, densidade e impacto das decisões de implantação no programa.</p>
+        <div class="tags"><span class="tag blue">RGEU ref.</span><span class="tag green">RJUE · RJIGT</span><span class="tag yellow">PDM municipal</span></div>
+        <div class="law"><b>DL 80/2015 RJIGT</b> · <b>DL 555/99 RJUE</b> · <b>DL 38382/51 RGEU</b> · PDM/PP municipal</div>
+        <div class="note">Parâmetros definidos no PDM de cada município. Solicitar Informação Prévia vinculativa antes do conceito.</div>
+      </div>
+      <div class="right">
+        <div class="section">Índices urbanísticos — referência</div>
+        <div class="row"><span class="label">Iu — Índice de utilização do solo (GFA/área terreno)</span><span class="value">por PDM</span><span class="badge warn">municipal</span></div>
+        <div class="row"><span class="label">Ii — Índice de implantação (footprint/área terreno)</span><span class="value">por PDM</span><span class="badge warn">municipal</span></div>
+        <div class="row"><span class="label">Índice de impermeabilização máximo</span><span class="value">0.30–0.60</span><span class="badge warn">municipal</span></div>
+        <div class="row"><span class="label">Cércea — altura máxima edificação</span><span class="value">por PDM</span><span class="badge warn">municipal</span></div>
+        <div class="row"><span class="label">Afastamentos mínimos a limites/via pública</span><span class="value">por PDM</span><span class="badge warn">municipal</span></div>
+        <div class="row"><span class="label">Estacionamento — lugares por fração</span><span class="value">Portaria 216-B/2008</span><span class="badge ok">nacional</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-analysis="sun" data-search="sun hours analysis horas de sol exposição solar fachadas volumes rgeu artigo 73 reh fator solar v1 v2 v3">
+      <div class="left">
+        <div class="card-head"><span class="icon">☼</span><h3 class="ctitle">Sun Hours Analysis</h3></div>
+        <p class="cdesc">Horas de exposição solar no terreno, fachadas e volumes para uma data definida.</p>
+        <div class="tags"><span class="tag blue">RGEU Art.73</span><span class="tag green">REH DL 118/2013</span></div>
+        <div class="law"><b>Art.º 73.º RGEU</b> (ref. técnica) · <b>DL 118/2013 REH</b> · Portaria 349-B/2013</div>
+        <div class="note">Horas mínimas de sol não são fixadas em lei nacional — o controlo é feito por geometria e fator solar.</div>
+      </div>
+      <div class="right">
+        <div class="section">Afastamento mínimo entre fachadas — RGEU Art.73</div>
+        <div class="row"><span class="label">Distância mínima a obstáculos com vãos</span><span class="value">≥ ½ × altura</span><span class="badge ok">mín. 3 m</span></div>
+        <div class="section">Fator solar máx. vãos — zonas de verão</div>
+        <div class="row"><span class="label">V1 — Porto / Norte, inércia média</span><span class="value">g ≤ 0.56</span><span class="badge ok">cumprir</span></div>
+        <div class="row"><span class="label">V2 — Lisboa / Centro, inércia média</span><span class="value">g ≤ 0.50</span><span class="badge warn">restritivo</span></div>
+        <div class="row"><span class="label">V3 — Algarve / Sul, inércia média</span><span class="value">g ≤ 0.45</span><span class="badge bad">muito restritivo</span></div>
+        <div class="row"><span class="label">Vãos a Norte</span><span class="value">dispensados</span><span class="badge ok">livre</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-analysis="daylight" data-search="daylight potential analysis vsc luz natural vertical sky component np en 17037 iluminância lux rgeu afastamentos">
+      <div class="left">
+        <div class="card-head"><span class="icon">◐</span><h3 class="ctitle">Daylight Potential Analysis (VSC)</h3></div>
+        <p class="cdesc">Potencial de luz natural nos edifícios com base no Vertical Sky Component — VSC.</p>
+        <div class="tags"><span class="tag green">NP EN 17037:2021</span><span class="tag blue">RGEU afastamentos</span></div>
+        <div class="law"><b>NP EN 17037:2021</b> (norma europeia adotada em PT, CEN) · <b>Art.º 73.º RGEU</b> ref. geométrica</div>
+        <div class="note">A EN 17037 não é lei nacional direta, mas é uma referência técnica útil para justificar luz natural em fase de conceito.</div>
+      </div>
+      <div class="right">
+        <div class="section">EN 17037 — daylight provision targets</div>
+        <div class="row"><span class="label">Iluminância alvo — 300 lux sobre 50% da área</span><span class="value">≥ 50% horas</span><span class="badge ok">mínimo</span></div>
+        <div class="row"><span class="label">Iluminância mínima — 100 lux sobre 95% da área</span><span class="value">≥ 50% horas</span><span class="badge ok">mínimo</span></div>
+        <div class="section">VSC — indicador de fase conceito</div>
+        <div class="row"><span class="label">VSC elevado (boa luz natural)</span><span class="value">&gt; 27%</span><span class="badge ok">excelente</span></div>
+        <div class="row"><span class="label">VSC médio (luz aceitável)</span><span class="value">15–27%</span><span class="badge warn">aceitável</span></div>
+        <div class="row"><span class="label">VSC baixo (luz insuficiente)</span><span class="value">&lt; 15%</span><span class="badge bad">insuficiente</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-analysis="wind" data-search="wind analysis vento conforto pedestre lawson en 1991-1-4 eurocódigo m/s estrutural edifícios altos">
+      <div class="left">
+        <div class="card-head"><span class="icon">≋</span><h3 class="ctitle">Wind Analysis</h3></div>
+        <p class="cdesc">Efeito do vento no local e impacto da volumetria nos fluxos de ar ao redor do edifício.</p>
+        <div class="tags"><span class="tag orange">Lacuna legal PT</span><span class="tag gray">EN 1991-1-4 estrutural</span></div>
+        <div class="law"><b>Sem diploma PT</b> de conforto pedestre · <b>NP EN 1991-1-4</b> (cargas estruturais) · PDM Lisboa/Porto: estudo para ≥ 28 m</div>
+        <div class="note">Critério de referência: Lawson Pedestrian Comfort Criteria. É padrão de indústria, não limite legal português.</div>
+      </div>
+      <div class="right">
+        <div class="section">Lawson criteria — conforto pedestre</div>
+        <div class="grade"><span class="gdot" style="background:#65b891"></span><span class="glabel">&lt; 4 m/s</span><span class="gval">Excelente — lazer sentado, esplanada</span><span class="badge ok">A</span></div>
+        <div class="grade"><span class="gdot" style="background:#9cc96f"></span><span class="glabel">4–6 m/s</span><span class="gval">Bom — passeio lento, espaços de lazer</span><span class="badge ok">B</span></div>
+        <div class="grade"><span class="gdot" style="background:#e7bc62"></span><span class="glabel">6–8 m/s</span><span class="gval">Aceitável — circulação pedonal</span><span class="badge warn">C</span></div>
+        <div class="grade"><span class="gdot" style="background:#dc8e65"></span><span class="glabel">8–10 m/s</span><span class="gval">Desconfortável — uso esporádico</span><span class="badge warn">D</span></div>
+        <div class="grade"><span class="gdot" style="background:#d77979"></span><span class="glabel">&gt; 10 m/s</span><span class="gval">Inaceitável — qualquer uso exterior</span><span class="badge bad">E</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-analysis="microclimate" data-search="microclimate analysis microclima temperatura percebida conforto térmico exterior utci pmv iso 7730 rgr reh vento sol">
+      <div class="left">
+        <div class="card-head"><span class="icon">♨</span><h3 class="ctitle">Microclimate Analysis</h3></div>
+        <p class="cdesc">Temperatura percebida e conforto térmico exterior — sol, vento, céu exposto e dados climáticos locais.</p>
+        <div class="tags"><span class="tag yellow">RGR DL 9/2007</span><span class="tag green">REH DL 118/2013</span><span class="tag gray">UTCI / PMV ref.</span></div>
+        <div class="law"><b>DL 9/2007 RGR</b> (ruído) · <b>DL 118/2013 REH</b> (solar/térmico) · <b>EN ISO 7730</b> (PMV — ref. indústria)</div>
+        <div class="note">Sem lei PT de conforto térmico exterior. UTCI e PMV servem como referência técnica voluntária.</div>
+      </div>
+      <div class="right">
+        <div class="section">UTCI — universal thermal climate index</div>
+        <div class="row"><span class="label">Muito frio — stress extremo frio</span><span class="value">&lt; −13°C</span><span class="badge bad">crítico</span></div>
+        <div class="row"><span class="label">Frio — desconforto relativo a PT</span><span class="value">−13 a 9°C</span><span class="badge warn">desfavorável</span></div>
+        <div class="row"><span class="label">Confortável — zona neutra</span><span class="value">9–26°C</span><span class="badge ok">alvo</span></div>
+        <div class="row"><span class="label">Calor moderado — stress leve</span><span class="value">26–32°C</span><span class="badge warn">atenção</span></div>
+        <div class="row"><span class="label">Calor intenso / stress severo</span><span class="value">&gt; 32°C</span><span class="badge bad">inaceitável</span></div>
+        <div class="row"><span class="label">PMV aceitável (EN ISO 7730)</span><span class="value">−0.5 a +0.5</span><span class="badge ok">zona A</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-analysis="operational" data-search="operational energy analysis energia operacional reh recs dl 118 2013 classes energéticas ntc nt nZEB b- a+ certificado sce">
+      <div class="left">
+        <div class="card-head"><span class="icon">↯</span><h3 class="ctitle">Operational Energy Analysis</h3></div>
+        <p class="cdesc">Energia prevista para operar o edifício — iluminação, aquecimento, arrefecimento e equipamentos.</p>
+        <div class="tags"><span class="tag green">REH DL 118/2013</span><span class="tag green">RECS DL 118/2013</span></div>
+        <div class="law"><b>DL 118/2013 — REH/RECS</b> · Portaria 349-B/2013 · Certificado SCE obrigatório</div>
+        <div class="note">Edifícios novos: mínimo obrigatório classe B–. NZEB requer classe A ou A+.</div>
+      </div>
+      <div class="right">
+        <div class="section">Classes energéticas — rácio Ntc / Nt</div>
+        <div class="scale energy"><span style="background:#65b891;color:white">A+</span><span style="background:#8ec7a0">A</span><span style="background:#b4d477">B</span><span style="background:#d8e7aa">B-</span><span style="background:#e7bc62">C</span><span style="background:#dc8e65;color:white">D</span><span style="background:#d77979;color:white">E-F</span></div>
+        <div class="row"><span class="label">A+ — NZEB</span><span class="value">Ntc/Nt ≤ 0.25</span><span class="badge ok">excelente</span></div>
+        <div class="row"><span class="label">A</span><span class="value">0.25 &lt; Ntc/Nt ≤ 0.50</span><span class="badge ok">bom</span></div>
+        <div class="row"><span class="label">B</span><span class="value">0.50 &lt; Ntc/Nt ≤ 0.75</span><span class="badge ok">bom</span></div>
+        <div class="row"><span class="label">B– (mínimo legal ↑)</span><span class="value">0.75 &lt; Ntc/Nt ≤ 1.00</span><span class="badge warn">mínimo</span></div>
+        <div class="row"><span class="label">C–F</span><span class="value">Ntc/Nt &gt; 1.00</span><span class="badge bad">não conforme</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-analysis="solar" data-search="solar energy analysis energia solar fotovoltaico painéis pv upac dgeg dl 15 2022 solar térmico reh artigo 27 aqs bomba calor">
+      <div class="left">
+        <div class="card-head"><span class="icon">▤</span><h3 class="ctitle">Solar Energy Analysis</h3></div>
+        <p class="cdesc">Potencial anual de energia solar e melhores zonas para painéis fotovoltaicos em coberturas e fachadas.</p>
+        <div class="tags"><span class="tag green">REH Art.27</span><span class="tag green">DL 15/2022 UPAC</span></div>
+        <div class="law"><b>DL 118/2013 REH Art.º 27.º</b> (solar térmico obrigatório) · <b>DL 15/2022</b> (UPAC fotovoltaica)</div>
+        <div class="note">Solar térmico obrigatório em habitações novas. Fotovoltaico depende da potência instalada e do regime DGEG.</div>
+      </div>
+      <div class="right">
+        <div class="section">Solar térmico — REH Art.27</div>
+        <div class="row"><span class="label">Sistemas solares térmicos (AQS)</span><span class="value">obrigatório</span><span class="badge bad">legal</span></div>
+        <div class="row"><span class="label">Alternativa: bomba de calor AQS equivalente</span><span class="value">admissível</span><span class="badge warn">exceção</span></div>
+        <div class="section">Fotovoltaico UPAC — DL 15/2022</div>
+        <div class="row"><span class="label">Até 700 W</span><span class="value">isento</span><span class="badge ok">livre</span></div>
+        <div class="row"><span class="label">700 W – 30 kW</span><span class="value">comunicação prévia DGEG</span><span class="badge ok">simplificado</span></div>
+        <div class="row"><span class="label">30 kW – 1 MW</span><span class="value">registo + certificado</span><span class="badge warn">registo</span></div>
+        <div class="row"><span class="label">&gt; 1 MW</span><span class="value">licença produção + exploração</span><span class="badge bad">licença</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-analysis="embodied" data-search="embodied carbon analysis carbono incorporado gwp lca en 15978 breeam v7 leed v5 a1 a5 kgco2e m2 riba 2030">
+      <div class="left">
+        <div class="card-head"><span class="icon">◇</span><h3 class="ctitle">Embodied Carbon Analysis</h3></div>
+        <p class="cdesc">Carbono incorporado dos edifícios — testar forma, estrutura e materiais ainda em fase inicial.</p>
+        <div class="tags"><span class="tag orange">Voluntário PT 2026</span><span class="tag gray">EN 15978 · BREEAM v7 · LEED v5</span></div>
+        <div class="law"><b>EN 15978</b> (LCA voluntária) · <b>BREEAM v7 Mat01</b> · <b>LEED v5 MRc</b> · EU ETS2 previsto 2027/28</div>
+        <div class="note">Sem obrigação legal PT em 2026. A análise no Forma é otimização voluntária e preparação para certificações.</div>
+      </div>
+      <div class="right">
+        <div class="section">BREEAM v7 — GWP em kgCO₂e/m² (A1–A5)</div>
+        <div class="scale carbon"><span style="background:#65b891;color:white">A++</span><span style="background:#8ec7a0">A+</span><span style="background:#b4d477">A</span><span style="background:#e7bc62">B</span><span style="background:#dc8e65;color:white">C</span><span style="background:#d77979;color:white">D-G</span></div>
+        <div class="row"><span class="label">A++ — alvo 2030</span><span class="value">&lt; 350 kgCO₂e/m²</span><span class="badge ok">RIBA 2030</span></div>
+        <div class="row"><span class="label">A+</span><span class="value">350–500 kgCO₂e/m²</span><span class="badge ok">bom</span></div>
+        <div class="row"><span class="label">A</span><span class="value">500–650 kgCO₂e/m²</span><span class="badge ok">bom</span></div>
+        <div class="row"><span class="label">B</span><span class="value">650–800 kgCO₂e/m²</span><span class="badge warn">médio</span></div>
+        <div class="row"><span class="label">C</span><span class="value">800–1100 kgCO₂e/m²</span><span class="badge bad">abaixo</span></div>
+        <div class="row"><span class="label">D–G (benchmark atual)</span><span class="value">&gt; 1100 kgCO₂e/m²</span><span class="badge bad">típico 2026</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-analysis="noise" data-search="noise analysis ruído lden ln rgr dl 9 2007 ragra dl 146 2006 rrae dl 129 2002 dba zona sensível zona mista">
+      <div class="left">
+        <div class="card-head"><span class="icon">)))</span><h3 class="ctitle">Noise Analysis</h3></div>
+        <p class="cdesc">Condições de ruído por tráfego rodoviário e ferroviário — exposição do terreno e efeito da implantação.</p>
+        <div class="tags"><span class="tag yellow">RGR DL 9/2007</span><span class="tag yellow">RAGRA DL 146/2006</span><span class="tag green">RRAE DL 129/2002</span></div>
+        <div class="law"><b>DL 9/2007 RGR</b> (limites exterior) · <b>DL 146/2006 RAGRA</b> (mapas ruído) · <b>DL 129/2002 RRAE</b> (interior)</div>
+        <div class="note">Consultar mapa de ruído municipal antes de definir implantação. Centros históricos podem ter –5 dB(A) face ao tipo de zona.</div>
+      </div>
+      <div class="right">
+        <div class="section">Valores-limite legais — DL 9/2007 RGR</div>
+        <div class="row"><span class="label">Zona sensível — habitação, escola, hospital, lazer</span><span class="value">Lden ≤ 55 / Ln ≤ 45 dB(A)</span><span class="badge ok">legal</span></div>
+        <div class="row"><span class="label">Zona mista — residencial / comercial</span><span class="value">Lden ≤ 65 / Ln ≤ 55 dB(A)</span><span class="badge warn">legal</span></div>
+        <div class="row"><span class="label">Regime transitório (zonas não classificadas)</span><span class="value">Lden ≤ 63 / Ln ≤ 53 dB(A)</span><span class="badge warn">transitório</span></div>
+        <div class="section">Critério de incomodidade interior</div>
+        <div class="row"><span class="label">Isolamento fachada D2m,nT,w mínimo — habitação</span><span class="value">≥ 28 dB</span><span class="badge ok">mínimo</span></div>
+        <div class="row"><span class="label">Isolamento fachada D2m,nT,w — via ruidosa (&gt;65 dB)</span><span class="value">≥ 33 dB</span><span class="badge bad">reforçado</span></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="empty" id="emptyState">Não encontrei nenhum card com esse filtro/pesquisa.</div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot" style="--c:var(--fs-blue)"></span>RGEU / geometria urbana</span>
+    <span class="legend-item"><span class="legend-dot" style="--c:var(--fs-green)"></span>Energia, solar e desempenho</span>
+    <span class="legend-item"><span class="legend-dot" style="--c:var(--fs-orange)"></span>Lacuna legal / referência técnica</span>
+    <span class="legend-item"><span class="legend-dot" style="--c:var(--fs-yellow)"></span>Exterior, microclima e ruído</span>
+  </div>
+</div>
+
+<script>
+let activeAnalysis='all';
+function normalizeText(value){return (value||'').toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+function setAnalysis(analysis){
+  activeAnalysis=analysis;
+  document.querySelectorAll('.navchip').forEach(btn=>btn.classList.toggle('active',btn.dataset.analysisFilter===analysis));
+  if(analysis==='all') document.getElementById('searchBox').value='';
+  applyFilters();
+}
+function applyFilters(){
+  const q=normalizeText(document.getElementById('searchBox').value);
+  let visible=0;
+  document.querySelectorAll('.card').forEach(card=>{
+    const byAnalysis=activeAnalysis==='all'||card.dataset.analysis===activeAnalysis;
+    const haystack=normalizeText(card.dataset.search+' '+card.innerText);
+    const bySearch=!q||haystack.includes(q);
+    const show=byAnalysis&&bySearch;
+    card.classList.toggle('hidden',!show);
+    if(show) visible++;
+  });
+  document.getElementById('emptyState').style.display=visible?'none':'block';
+}
+</script>
