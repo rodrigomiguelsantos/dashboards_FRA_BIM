@@ -7,130 +7,168 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 <style>
 :root{
-  --bg:#F1F2F7;--card:#FFFFFF;--bd:#E3E5EF;--bds:#C8CAD8;
-  --t1:#17192E;--t2:#5A5C78;--t3:#9899B0;
-  --blue:#0066FF;--blue-bg:#E6F1FB;--blue-br:#85B7EB;
-  --green:#2E5A0B;--green-bg:#EAF3DE;--green-br:#8DC44A;
-  --amber:#7A4508;--amber-bg:#FAEEDA;--amber-br:#E89E27;
-  --red:#7A1B1B;--red-bg:#FCEBEB;--red-br:#F09595;
-  --purple:#332E89;--purple-bg:#EEEDFE;--purple-br:#AFA9EC;
-  --teal:#075040;--teal-bg:#E1F5EE;--teal-br:#5DCAA5;
-  --r:10px;--font:-apple-system,'Inter','Segoe UI',system-ui,sans-serif;
+  --fs-bg:#fbfaf7;
+  --fs-card:#fffefa;
+  --fs-card-soft:#f8f6f1;
+  --fs-line:#e6e0d6;
+  --fs-line-strong:#d9d0c4;
+  --fs-text:#4b4945;
+  --fs-muted:#74706a;
+  --fs-soft:#9b968f;
+  --fs-dark:#373532;
+  --fs-blue:#6b91d3;--fs-blue-bg:#eaf2ff;--fs-blue-bd:#abc5ee;--fs-blue-tx:#2f5e9f;
+  --fs-green:#78a95f;--fs-green-bg:#edf7e7;--fs-green-bd:#acd197;--fs-green-tx:#477534;
+  --fs-orange:#b28a5b;--fs-orange-bg:#fff0df;--fs-orange-bd:#ddb67d;--fs-orange-tx:#7d5930;
+  --fs-yellow:#d1b84a;--fs-yellow-bg:#fff8d9;--fs-yellow-bd:#e3ca69;--fs-yellow-tx:#7a6718;
+  --fs-red:#d77979;--fs-red-bg:#fdeced;--fs-red-tx:#a84e4e;
+  --fs-purple:#8079c9;--fs-purple-bg:#eeedfb;--fs-purple-bd:#c3bef0;--fs-purple-tx:#3f3a86;
+  --fs-teal:#5aa891;--fs-teal-bg:#e3f4ee;--fs-teal-bd:#98d3c1;--fs-teal-tx:#20705c;
+  --fs-shadow:0 8px 26px rgba(77,67,55,.06);
+  --fs-radius:13px;
+  --font:Inter,Aptos,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--t1);font-family:var(--font);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
- 
+body{background:var(--fs-bg);color:var(--fs-text);font-family:var(--font);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+
 /* ── NAV ── */
-nav{background:var(--card);border-bottom:0.5px solid var(--bd);position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(20,20,50,.04)}
-.nav-inner{max-width:1120px;margin:0 auto;padding:0 20px;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-brand{display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0}
-.nav-brand-icon{width:30px;height:30px;background:var(--t1);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;flex-shrink:0}
-.nav-brand-text{font-size:13px;font-weight:600;color:var(--t1);line-height:1.2}
-.nav-brand-sub{font-size:10px;color:var(--t3);font-weight:400}
-.nav-links{display:flex;align-items:center;gap:2px}
-.nav-link{font-size:12px;font-weight:500;color:var(--t2);padding:5px 10px;border-radius:6px;text-decoration:none;transition:background .12s,color .12s;white-space:nowrap}
-.nav-link:hover{background:var(--bg);color:var(--t1)}
-.nav-link.active{color:var(--t1);background:var(--bg)}
-.nav-link.cta{background:var(--t1);color:#fff;margin-left:4px}
-.nav-link.cta:hover{background:#2C2F45}
-.hamburger{display:none;background:none;border:0.5px solid var(--bd);border-radius:7px;padding:6px 8px;cursor:pointer;color:var(--t2);font-size:18px;line-height:1}
-.hamburger:hover{background:var(--bg)}
- 
+nav{background:rgba(255,254,250,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--fs-line);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(77,67,55,.03)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-brand-icon{width:31px;height:31px;background:var(--fs-dark);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fffefa;font-size:15px;flex-shrink:0}
+.nav-brand-text{font-size:13px;font-weight:700;color:var(--fs-dark);line-height:1.2;letter-spacing:-.01em}
+.nav-brand-sub{font-size:10px;color:var(--fs-soft);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{font-size:12px;font-weight:600;color:var(--fs-muted);padding:7px 12px;border-radius:999px;text-decoration:none;transition:background .14s,color .14s;white-space:nowrap;border:1px solid transparent;display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-family:inherit}
+.nav-link:hover{background:var(--fs-card-soft);color:var(--fs-text);border-color:var(--fs-line)}
+.nav-link.active{color:var(--fs-dark);background:#f2eee7;border-color:#cfc4b5}
+.nav-link.cta{background:var(--fs-dark);color:#fffefa;border-color:var(--fs-dark)}
+.nav-link.cta:hover{background:#514d47;color:#fff;border-color:#514d47}
+.hamburger{display:none;background:var(--fs-card);border:1px solid var(--fs-line);border-radius:8px;padding:6px 9px;cursor:pointer;color:var(--fs-muted);font-size:18px;line-height:1}
+.hamburger:hover{background:var(--fs-card-soft)}
+
 /* mobile drawer */
-.drawer{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;z-index:99;background:rgba(23,25,46,.35);backdrop-filter:blur(2px)}
+.drawer{display:none;position:fixed;top:54px;left:0;right:0;bottom:0;z-index:99;background:rgba(55,53,50,.32);backdrop-filter:blur(2px)}
 .drawer.open{display:block}
-.drawer-panel{background:var(--card);border-right:0.5px solid var(--bd);width:260px;height:100%;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:2px}
-.drawer-section{font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.07em;text-transform:uppercase;padding:12px 8px 5px}
-.drawer-link{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:500;color:var(--t2);padding:9px 10px;border-radius:7px;text-decoration:none;transition:background .1s,color .1s}
-.drawer-link:hover{background:var(--bg);color:var(--t1)}
+.drawer-panel{background:var(--fs-card);border-right:1px solid var(--fs-line);width:270px;height:100%;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:3px;box-shadow:var(--fs-shadow)}
+.drawer-section{font-size:10px;font-weight:800;color:var(--fs-soft);letter-spacing:.07em;text-transform:uppercase;padding:12px 8px 5px}
+.drawer-link{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--fs-muted);padding:10px;border-radius:9px;text-decoration:none;transition:background .12s,color .12s;cursor:pointer;border:0;background:none;font-family:inherit;text-align:left;width:100%}
+.drawer-link:hover{background:var(--fs-card-soft);color:var(--fs-text)}
 .drawer-link i{font-size:16px;width:20px;text-align:center;flex-shrink:0}
-.drawer-link .badge{font-size:9px;font-weight:600;padding:1px 6px;border-radius:20px;margin-left:auto;background:var(--green-bg);color:var(--green)}
-.drawer-link .badge.soon{background:var(--bg);color:var(--t3)}
-.drawer-divider{height:0.5px;background:var(--bd);margin:8px 0}
- 
+.drawer-link .badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:auto;background:var(--fs-green-bg);color:var(--fs-green-tx);border:1px solid var(--fs-green-bd)}
+.drawer-link .badge.soon{background:var(--fs-card-soft);color:var(--fs-soft);border-color:var(--fs-line)}
+.drawer-divider{height:1px;background:var(--fs-line);margin:8px 0}
+
+/* ── layout shell ── */
+.shell{max-width:1120px;margin:0 auto;padding:0 20px;background:linear-gradient(180deg,#fcfbf8 0%,#f8f6f1 100%)}
+
 /* ── HERO ── */
-.hero{max-width:1120px;margin:0 auto;padding:48px 20px 36px}
-.hero-eyebrow{font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.09em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.hero-eyebrow::after{content:'';flex:1;height:0.5px;background:var(--bd)}
-.hero-title{font-size:32px;font-weight:700;color:var(--t1);letter-spacing:-.03em;line-height:1.15;margin-bottom:12px;max-width:580px}
-.hero-title span{color:var(--blue)}
-.hero-sub{font-size:14px;color:var(--t2);line-height:1.7;max-width:520px;margin-bottom:28px}
-.hero-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
-.btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:9px 18px;border-radius:8px;text-decoration:none;border:0.5px solid;transition:all .12s;cursor:pointer;font-family:inherit}
-.btn-primary{background:var(--t1);color:#fff;border-color:var(--t1)}
-.btn-primary:hover{background:#2C2F45}
-.btn-secondary{background:var(--card);color:var(--t2);border-color:var(--bd)}
-.btn-secondary:hover{border-color:var(--bds);color:var(--t1);background:#fff}
-.hero-codes{display:flex;gap:6px;flex-wrap:wrap}
-.code-pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;border:0.5px solid;white-space:nowrap}
- 
-/* ── STATS ROW ── */
-.stats-row{max-width:1120px;margin:0 auto;padding:0 20px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.stat-card{background:var(--card);border:0.5px solid var(--bd);border-radius:var(--r);padding:16px 18px}
-.stat-n{font-size:28px;font-weight:600;color:var(--t1);line-height:1;letter-spacing:-.02em}
-.stat-l{font-size:11px;color:var(--t2);margin-top:4px;line-height:1.4}
-.stat-sub{font-size:10px;color:var(--t3);margin-top:2px}
- 
+.hero{padding:46px 0 30px}
+.hero-eyebrow{font-size:11px;font-weight:800;color:var(--fs-soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px}
+.hero-eyebrow::after{content:'';flex:1;height:1px;background:var(--fs-line)}
+.hero-title{font-size:32px;font-weight:700;color:var(--fs-dark);letter-spacing:-.03em;line-height:1.14;margin-bottom:12px;max-width:600px}
+.hero-title span{color:var(--fs-orange-tx)}
+.hero-sub{font-size:14px;color:var(--fs-muted);line-height:1.7;max-width:560px;margin-bottom:26px}
+.hero-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:10px 18px;border-radius:999px;text-decoration:none;border:1px solid;transition:all .14s;cursor:pointer;font-family:inherit;line-height:1}
+.btn-primary{background:var(--fs-dark);color:#fffefa;border-color:var(--fs-dark)}
+.btn-primary:hover{background:#514d47;transform:translateY(-1px)}
+.btn-secondary{background:var(--fs-card);color:var(--fs-muted);border-color:var(--fs-line)}
+.btn-secondary:hover{border-color:var(--fs-line-strong);color:var(--fs-text);transform:translateY(-1px)}
+
+/* ── STATS ── */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 0 34px}
+.stat-card{background:rgba(255,255,255,.7);border:1px solid var(--fs-line);border-radius:11px;padding:15px 17px;box-shadow:0 3px 12px rgba(77,67,55,.035)}
+.stat-n{font-size:26px;font-weight:700;color:var(--fs-dark);line-height:1;letter-spacing:-.02em}
+.stat-l{font-size:11px;color:var(--fs-muted);margin-top:5px;line-height:1.4;font-weight:600}
+.stat-sub{font-size:10px;color:var(--fs-soft);margin-top:3px;line-height:1.4}
+
 /* ── SECTION LABEL ── */
-.sec-wrap{max-width:1120px;margin:0 auto;padding:0 20px 12px}
-.sec-label{font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.sec-label::after{content:'';flex:1;height:0.5px;background:var(--bd)}
- 
+.sec-label{font-size:10.5px;font-weight:800;color:var(--fs-soft);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;padding-top:2px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--fs-line)}
+
 /* ── DASHBOARD GRID ── */
-.db-grid{max-width:1120px;margin:0 auto;padding:0 20px 32px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
-.db-card{background:var(--card);border:0.5px solid var(--bd);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 3px rgba(20,20,50,.04);transition:border-color .14s,box-shadow .14s,transform .14s;text-decoration:none;display:flex;flex-direction:column}
-.db-card:hover{border-color:var(--bds);box-shadow:0 4px 16px rgba(20,20,50,.09);transform:translateY(-1px)}
+.db-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px;padding-bottom:34px}
+.db-card{--accent:var(--fs-blue);--accent-bg:var(--fs-blue-bg);background:linear-gradient(135deg,#fffefa 0%,#fffefa 58%,#faf8f3 100%);border:1px solid var(--fs-line);border-left:5px solid var(--accent);border-radius:var(--fs-radius);overflow:hidden;box-shadow:var(--fs-shadow);transition:transform .18s,border-color .18s,box-shadow .18s;text-decoration:none;display:flex;flex-direction:column;cursor:pointer;font-family:inherit;text-align:left;padding:0}
+.db-card:hover{transform:translateY(-1px);border-color:#d6ccbe;box-shadow:0 12px 30px rgba(77,67,55,.1)}
 .db-card-top{padding:18px 20px 14px;flex:1}
-.db-card-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;flex-shrink:0}
-.db-card-name{font-size:15px;font-weight:600;color:var(--t1);line-height:1.3;margin-bottom:6px}
-.db-card-desc{font-size:12px;color:var(--t2);line-height:1.65}
-.db-card-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:10px}
-.db-card-bottom{padding:12px 20px;border-top:0.5px solid var(--bd);background:#F7F8FC;display:flex;align-items:center;justify-content:space-between}
-.db-card-meta{font-size:11px;color:var(--t3)}
-.db-card-arrow{font-size:16px;color:var(--t3);transition:color .12s,transform .12s}
-.db-card:hover .db-card-arrow{color:var(--t1);transform:translateX(2px)}
-.db-card.soon{pointer-events:none;opacity:.55}
-.db-card.soon .db-card-bottom{background:var(--bg)}
-.soon-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--bg);color:var(--t3);border:0.5px solid var(--bd)}
- 
-/* ── LEGAL LEGEND ── */
-.legend-wrap{max-width:1120px;margin:0 auto;padding:0 20px 20px}
-.legend-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
-.legend-card{background:var(--card);border:0.5px solid var(--bd);border-radius:var(--r);padding:14px 16px;display:flex;align-items:flex-start;gap:10px}
+.db-card-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:13px;flex-shrink:0;color:var(--accent);background:var(--accent-bg)}
+.db-card-name{font-size:15px;font-weight:700;color:#46433f;line-height:1.3;margin-bottom:6px;letter-spacing:-.01em}
+.db-card-desc{font-size:12px;color:var(--fs-muted);line-height:1.62}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
+.tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid transparent;display:inline-flex;align-items:center;gap:4px;line-height:1.45}
+.tag:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.7}
+.tag.blue{background:var(--fs-blue-bg);border-color:var(--fs-blue-bd);color:var(--fs-blue-tx)}
+.tag.green{background:var(--fs-green-bg);border-color:var(--fs-green-bd);color:var(--fs-green-tx)}
+.tag.orange{background:var(--fs-orange-bg);border-color:var(--fs-orange-bd);color:var(--fs-orange-tx)}
+.tag.yellow{background:var(--fs-yellow-bg);border-color:var(--fs-yellow-bd);color:var(--fs-yellow-tx)}
+.tag.purple{background:var(--fs-purple-bg);border-color:var(--fs-purple-bd);color:var(--fs-purple-tx)}
+.tag.teal{background:var(--fs-teal-bg);border-color:var(--fs-teal-bd);color:var(--fs-teal-tx)}
+.tag.gray{background:#f3f1ec;border-color:#d8d1c8;color:#706a62}
+.db-card-bottom{padding:11px 20px;border-top:1px solid var(--fs-line);background:rgba(248,246,241,.5);display:flex;align-items:center;justify-content:space-between}
+.db-card-meta{font-size:11px;color:var(--fs-soft);font-weight:500}
+.db-card-arrow{font-size:16px;color:var(--fs-soft);transition:color .14s,transform .14s}
+.db-card:hover .db-card-arrow{color:var(--fs-text);transform:translateX(2px)}
+.db-card.soon{opacity:.62;cursor:default}
+.db-card.soon:hover{transform:none;border-color:var(--fs-line);box-shadow:var(--fs-shadow)}
+.db-card.soon .db-card-bottom{background:var(--fs-card-soft)}
+.soon-badge{font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--fs-card-soft);color:var(--fs-soft);border:1px solid var(--fs-line)}
+
+/* open-local highlight card */
+.db-card.open-local{--accent:var(--fs-dark);border-style:dashed;border-left-style:solid;background:linear-gradient(135deg,#fff 0%,#f7f4ee 100%)}
+.db-card.open-local .db-card-icon{background:var(--fs-dark);color:#fffefa}
+
+/* ── LEGEND ── */
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;padding-bottom:20px}
+.legend-card{background:var(--fs-card);border:1px solid var(--fs-line);border-radius:var(--fs-radius);padding:14px 16px;display:flex;align-items:flex-start;gap:11px;box-shadow:0 3px 12px rgba(77,67,55,.03)}
 .legend-emoji{font-size:18px;flex-shrink:0;margin-top:1px}
-.legend-title{font-size:12px;font-weight:600;color:var(--t1);margin-bottom:2px}
-.legend-desc{font-size:11px;color:var(--t2);line-height:1.5}
- 
+.legend-title{font-size:12px;font-weight:700;color:#46433f;margin-bottom:3px}
+.legend-desc{font-size:11px;color:var(--fs-muted);line-height:1.55}
+
 /* ── ALERT ── */
-.alert-wrap{max-width:1120px;margin:0 auto;padding:0 20px 28px}
-.alert{background:var(--amber-bg);border:0.5px solid var(--amber-br);border-left:3px solid var(--amber);border-radius:var(--r);padding:13px 16px;display:flex;align-items:flex-start;gap:10px}
-.alert i{color:var(--amber);font-size:16px;flex-shrink:0;margin-top:1px}
-.alert-text{font-size:12px;color:var(--amber);line-height:1.6}
-.alert-text strong{font-weight:600}
- 
+.alert{background:var(--fs-orange-bg);border:1px solid var(--fs-orange-bd);border-left:4px solid var(--fs-orange);border-radius:var(--fs-radius);padding:13px 16px;display:flex;align-items:flex-start;gap:11px;margin-bottom:30px}
+.alert i{color:var(--fs-orange-tx);font-size:16px;flex-shrink:0;margin-top:1px}
+.alert-text{font-size:12px;color:var(--fs-orange-tx);line-height:1.6}
+.alert-text strong{font-weight:700}
+
 /* ── FOOTER ── */
-footer{border-top:0.5px solid var(--bd);background:var(--card);padding:20px;text-align:center}
+footer{border-top:1px solid var(--fs-line);background:var(--fs-card);padding:22px 20px;margin-top:8px}
 .foot-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.foot-l{font-size:11px;color:var(--t3);line-height:1.6}
-.foot-r{font-size:11px;color:var(--t3)}
- 
+.foot-l{font-size:11px;color:var(--fs-soft);line-height:1.6}
+.foot-l strong{color:var(--fs-muted);font-weight:700}
+.foot-r{font-size:11px;color:var(--fs-soft)}
+
+/* ── VIEWER (local dashboard) ── */
+.viewer{display:none;position:fixed;inset:0;z-index:200;background:var(--fs-bg);flex-direction:column}
+.viewer.open{display:flex}
+.viewer-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:var(--fs-card);border-bottom:1px solid var(--fs-line);box-shadow:0 2px 10px rgba(77,67,55,.04);flex-shrink:0}
+.viewer-name{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:var(--fs-dark);min-width:0}
+.viewer-name i{color:var(--fs-orange-tx);font-size:16px;flex-shrink:0}
+.viewer-name span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.viewer-name small{font-size:10px;font-weight:600;color:var(--fs-soft);text-transform:uppercase;letter-spacing:.05em}
+.viewer-actions{display:flex;gap:7px;flex-shrink:0}
+.viewer-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:7px 13px;border-radius:999px;border:1px solid var(--fs-line);background:var(--fs-card);color:var(--fs-muted);cursor:pointer;font-family:inherit;transition:all .12s}
+.viewer-btn:hover{border-color:var(--fs-line-strong);color:var(--fs-text)}
+.viewer-btn.close{background:var(--fs-dark);color:#fffefa;border-color:var(--fs-dark)}
+.viewer-btn.close:hover{background:#514d47;color:#fff}
+.viewer-frame{flex:1;width:100%;border:0;background:#fff}
+
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   .nav-links{display:none}
   .hamburger{display:flex;align-items:center}
   .hero-title{font-size:24px}
   .stats-row{grid-template-columns:repeat(2,1fr)}
-  .hero{padding:32px 16px 24px}
-  .stats-row,.db-grid,.sec-wrap,.legend-wrap,.alert-wrap{padding-left:16px;padding-right:16px}
+  .hero{padding:32px 0 22px}
+  .shell{padding:0 16px}
 }
 @media(max-width:480px){
-  .stats-row{grid-template-columns:1fr 1fr}
   .db-grid{grid-template-columns:1fr}
+  .viewer-name small{display:none}
 }
 </style>
 </head>
 <body>
- 
+
 <!-- ── NAV ── -->
 <nav>
   <div class="nav-inner">
@@ -143,6 +181,7 @@ footer{border-top:0.5px solid var(--bd);background:var(--card);padding:20px;text
     </a>
     <div class="nav-links">
       <a href="index.html" class="nav-link active">Início</a>
+      <button class="nav-link" onclick="pickLocalDashboard()"><i class="ti ti-folder-open"></i> Abrir dashboard local</button>
       <a href="#dashboards" class="nav-link cta"><i class="ti ti-layout-grid"></i> Dashboards</a>
     </div>
     <button class="hamburger" onclick="toggleDrawer()" aria-label="Menu">
@@ -150,198 +189,210 @@ footer{border-top:0.5px solid var(--bd);background:var(--card);padding:20px;text
     </button>
   </div>
 </nav>
- 
+
 <!-- ── MOBILE DRAWER ── -->
 <div class="drawer" id="drawer" onclick="closeDrawer(event)">
   <div class="drawer-panel" onclick="event.stopPropagation()">
     <div class="drawer-section">Navegação</div>
     <a href="index.html" class="drawer-link"><i class="ti ti-home"></i>Início</a>
+    <button class="drawer-link" onclick="pickLocalDashboard()"><i class="ti ti-folder-open"></i>Abrir dashboard local<span class="badge">HTML</span></button>
     <div class="drawer-section">Dashboards ativos</div>
     <a href="forma-thresholds.html" class="drawer-link">
-      <i class="ti ti-chart-dots" style="color:#382880"></i>
+      <i class="ti ti-chart-dots" style="color:var(--fs-purple-tx)"></i>
       Forma Site Design Analyses
       <span class="badge">Ativo</span>
     </a>
     <a href="leed-breeam.html" class="drawer-link">
-      <i class="ti ti-leaf" style="color:#075040"></i>
+      <i class="ti ti-leaf" style="color:var(--fs-teal-tx)"></i>
       LEED Implementation
       <span class="badge">Ativo</span>
     </a>
- 
+
     <div class="drawer-divider"></div>
     <div class="drawer-section">Em desenvolvimento</div>
-    <a href="#" class="drawer-link" style="pointer-events:none;opacity:.5">
-      <i class="ti ti-stairs" style="color:#9899B0"></i>
+    <span class="drawer-link" style="opacity:.55">
+      <i class="ti ti-stairs" style="color:var(--fs-soft)"></i>
       Circulações RGEU
       <span class="badge soon">Breve</span>
-    </a>
-    <a href="#" class="drawer-link" style="pointer-events:none;opacity:.5">
-      <i class="ti ti-home-2" style="color:#9899B0"></i>
+    </span>
+    <span class="drawer-link" style="opacity:.55">
+      <i class="ti ti-home-2" style="color:var(--fs-soft)"></i>
       Habitação — Áreas mínimas
       <span class="badge soon">Breve</span>
-    </a>
-    <a href="#" class="drawer-link" style="pointer-events:none;opacity:.5">
-      <i class="ti ti-accessibility" style="color:#9899B0"></i>
+    </span>
+    <span class="drawer-link" style="opacity:.55">
+      <i class="ti ti-accessibility" style="color:var(--fs-soft)"></i>
       Acessibilidades DL 163/2006
       <span class="badge soon">Breve</span>
+    </span>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-eyebrow">DEPARTAMENTO BIM · FRAGMENTOS</div>
+    <h1 class="hero-title"><span>Hub de Dashboards</span></h1>
+    <p class="hero-sub">Ferramentas de referência rápida para análise de espaços, circulações, áreas mínimas, acessibilidades e certificação ambiental. Baseado primariamente no RGEU e complementado com legislação portuguesa em vigor.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="pickLocalDashboard()"><i class="ti ti-folder-open"></i> Abrir dashboard local</button>
+      <a href="#dashboards" class="btn btn-secondary"><i class="ti ti-layout-grid"></i> Ver todos os dashboards</a>
+      <a href="forma-thresholds.html" class="btn btn-secondary"><i class="ti ti-chart-dots"></i> Forma Analyses</a>
+    </div>
+  </div>
+
+  <!-- ── STATS ── -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-n">RGEU</div>
+      <div class="stat-l">Fonte primária — DL 38382/1951</div>
+      <div class="stat-sub">Válido para projetos em curso até jun-2026</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">2</div>
+      <div class="stat-l">Dashboards ativos</div>
+      <div class="stat-sub">Forma Analyses + LEED Implementation</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">4+</div>
+      <div class="stat-l">Em desenvolvimento</div>
+      <div class="stat-sub">Circulações, áreas, acessibilidades, salubridade</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">PT</div>
+      <div class="stat-l">Contexto legal</div>
+      <div class="stat-sub">Portugal Continental</div>
+    </div>
+  </div>
+
+  <!-- ── DASHBOARDS ── -->
+  <div class="sec-label" id="dashboards">Dashboards ativos</div>
+  <div class="db-grid">
+
+    <a href="forma-thresholds.html" class="db-card" style="--accent:var(--fs-purple);--accent-bg:var(--fs-purple-bg)">
+      <div class="db-card-top">
+        <div class="db-card-icon"><i class="ti ti-chart-dots"></i></div>
+        <div class="db-card-name">Forma Site Design Analyses — Thresholds Regulamentares</div>
+        <div class="db-card-desc">As 9 análises preditivas do Forma mapeadas para a legislação portuguesa. Valores-limite legais para ruído, solar, vento, carbono incorporado, energia operacional e espaços verdes — para uso em fase de conceito.</div>
+        <div class="tags">
+          <span class="tag blue">RGEU</span>
+          <span class="tag green">REH · RRAE · RGR</span>
+          <span class="tag yellow">Espaços externos</span>
+        </div>
+      </div>
+      <div class="db-card-bottom">
+        <span class="db-card-meta">9 análises · DL 9/2007 · DL 118/2013 · EN 17037</span>
+        <i class="ti ti-arrow-right db-card-arrow"></i>
+      </div>
     </a>
-  </div>
-</div>
- 
-<!-- ── HERO ── -->
-<div class="hero">
-  <div class="hero-eyebrow">DEPARTAMENTO BIM · FRAGMENTOS</div>
-  <h1 class="hero-title"> <span>Hub de Dashboards</span> </h1>
-  <p class="hero-sub">Ferramentas de referência rápida para análise de espaços, circulações, áreas mínimas, acessibilidades e certificação ambiental. Baseado primariamente no RGEU e complementado com legislação portuguesa em vigor.</p>
-  <div class="hero-actions">
-    <a href="#dashboards" class="btn btn-primary"><i class="ti ti-layout-grid"></i> Ver todos os dashboards</a>
-    <a href="leed-breeam.html" class="btn btn-secondary"><i class="ti ti-leaf"></i> LEED Implementation</a>
-    <a href="forma-thresholds.html" class="btn btn-secondary"><i class="ti ti-chart-dots"></i> Forma Site Design Analyses</a>
-  </div>
-</div>
- 
-<!-- ── STATS ── -->
-<div class="stats-row">
-  <div class="stat-card">
-    <div class="stat-n">RGEU</div>
-    <div class="stat-l">Fonte primária — DL 38382/1951</div>
-    <div class="stat-sub">Válido para projetos em curso até jun-2026</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-n">2</div>
-    <div class="stat-l">Dashboards ativos</div>
-    <div class="stat-sub">Forma Analyses + LEED Implementation</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-n">4+</div>
-    <div class="stat-l">Em desenvolvimento</div>
-    <div class="stat-sub">Circulações, áreas, acessibilidades, salubridade</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-n">PT</div>
-    <div class="stat-l">Contexto legal</div>
-    <div class="stat-sub">Portugal Continental</div>
-  </div>
-</div>
- 
-<!-- ── DASHBOARDS ── -->
-<div class="sec-wrap" id="dashboards">
-  <div class="sec-label">Dashboards ativos</div>
-</div>
-<div class="db-grid">
- 
-  <a href="forma-thresholds.html" class="db-card">
-    <div class="db-card-top">
-      <div class="db-card-icon" style="background:var(--forma-bg,#EEEDFE);color:#382880"><i class="ti ti-chart-dots"></i></div>
-      <div class="db-card-name">Forma Site Design Analyses — Thresholds Regulamentares</div>
-      <div class="db-card-desc">As 9 análises preditivas do Forma mapeadas para a legislação portuguesa. Valores-limite legais para ruído, solar, vento, carbono incorporado, energia operacional e espaços verdes — para uso em fase de conceito.</div>
-      <div class="db-card-tags">
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--blue-bg);border-color:var(--blue-br);color:var(--blue);border:0.5px solid">🔵 RGEU</span>
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--green-bg);border-color:var(--green-br);color:var(--green);border:0.5px solid">🟢 REH · RRAE · RGR</span>
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:#FEF8DC;border-color:#C49A00;color:#6B5000;border:0.5px solid">🟡 Espaços externos</span>
+
+    <a href="leed-breeam.html" class="db-card" style="--accent:var(--fs-teal);--accent-bg:var(--fs-teal-bg)">
+      <div class="db-card-top">
+        <div class="db-card-icon"><i class="ti ti-leaf"></i></div>
+        <div class="db-card-name">LEED Implementation</div>
+        <div class="db-card-desc">Requisitos práticos de certificação por categoria — pré-requisitos, thresholds de créditos e pontuação para Certified, Silver, Gold e Platinum. Com dicas de integração BIM Revit e análises Forma.</div>
+        <div class="tags">
+          <span class="tag purple">LEED v5 BD+C</span>
+          <span class="tag teal">BREEAM NC 2018</span>
+          <span class="tag blue">BIM Revit</span>
+        </div>
       </div>
-    </div>
-    <div class="db-card-bottom">
-      <span class="db-card-meta">9 análises · DL 9/2007 · DL 118/2013 · EN 17037</span>
-      <i class="ti ti-arrow-right db-card-arrow"></i>
-    </div>
-  </a>
- 
-  <a href="leed-breeam.html" class="db-card">
-    <div class="db-card-top">
-      <div class="db-card-icon" style="background:var(--teal-bg);color:var(--teal)"><i class="ti ti-leaf"></i></div>
-      <div class="db-card-name">LEED Implementation</div>
-      <div class="db-card-desc">Requisitos práticos de certificação por categoria — pré-requisitos, thresholds de créditos e pontuação para Certified, Silver, Gold e Platinum. Com dicas de integração BIM Revit e análises Forma.</div>
-      <div class="db-card-tags">
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--purple-bg);border-color:var(--purple-br);color:var(--purple);border:0.5px solid">LEED v5 BD+C</span>
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--teal-bg);border-color:var(--teal-br);color:var(--teal);border:0.5px solid">BREEAM NC 2018</span>
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--blue-bg);border-color:var(--blue-br);color:var(--blue);border:0.5px solid">BIM Revit</span>
+      <div class="db-card-bottom">
+        <span class="db-card-meta">8 categorias · 38+ créditos · Platinum reqs.</span>
+        <i class="ti ti-arrow-right db-card-arrow"></i>
       </div>
-    </div>
-    <div class="db-card-bottom">
-      <span class="db-card-meta">8 categorias · 38+ créditos · Platinum reqs.</span>
-      <i class="ti ti-arrow-right db-card-arrow"></i>
-    </div>
-  </a>
- 
-</div>
- 
-<!-- ── EM DESENVOLVIMENTO ── -->
-<div class="sec-wrap">
+    </a>
+
+    <button class="db-card open-local" onclick="pickLocalDashboard()">
+      <div class="db-card-top">
+        <div class="db-card-icon"><i class="ti ti-folder-open"></i></div>
+        <div class="db-card-name">Abrir dashboard local</div>
+        <div class="db-card-desc">Escolhe um ficheiro <b>.html</b> no teu computador e visualiza-o aqui mesmo. Ideal para pré-visualizar dashboards ainda em desenvolvimento, antes de os publicar no hub.</div>
+        <div class="tags">
+          <span class="tag gray">Ficheiro local</span>
+          <span class="tag gray">.html / .htm</span>
+        </div>
+      </div>
+      <div class="db-card-bottom">
+        <span class="db-card-meta">Abre o explorador · renderiza · pré-visualiza</span>
+        <i class="ti ti-upload db-card-arrow"></i>
+      </div>
+    </button>
+
+  </div>
+
+  <!-- ── EM DESENVOLVIMENTO ── -->
   <div class="sec-label">Em desenvolvimento</div>
-</div>
-<div class="db-grid" style="padding-bottom:40px">
- 
-  <div class="db-card soon">
-    <div class="db-card-top">
-      <div class="db-card-icon" style="background:var(--bg);color:var(--t3)"><i class="ti ti-stairs"></i></div>
-      <div class="db-card-name">Circulações — RGEU</div>
-      <div class="db-card-desc">Larguras mínimas de corredores, escadas, patamares e comunicações verticais. Tabelas de conformidade por tipo de edifício e ocupação, com sobreposição DL 163/2006.</div>
-      <div class="db-card-tags">
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--blue-bg);border-color:var(--blue-br);color:var(--blue);border:0.5px solid">🔵 RGEU Art.45–47 · 70</span>
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--green-bg);border-color:var(--green-br);color:var(--green);border:0.5px solid">🟢 DL 163/2006</span>
+  <div class="db-grid">
+
+    <div class="db-card soon" style="--accent:var(--fs-soft);--accent-bg:var(--fs-card-soft)">
+      <div class="db-card-top">
+        <div class="db-card-icon"><i class="ti ti-stairs"></i></div>
+        <div class="db-card-name">Circulações — RGEU</div>
+        <div class="db-card-desc">Larguras mínimas de corredores, escadas, patamares e comunicações verticais. Tabelas de conformidade por tipo de edifício e ocupação, com sobreposição DL 163/2006.</div>
+        <div class="tags">
+          <span class="tag blue">RGEU Art.45–47 · 70</span>
+          <span class="tag green">DL 163/2006</span>
+        </div>
+      </div>
+      <div class="db-card-bottom">
+        <span class="db-card-meta">Corredores · Escadas · Patamares</span>
+        <span class="soon-badge">Em breve</span>
       </div>
     </div>
-    <div class="db-card-bottom">
-      <span class="db-card-meta">Corredores · Escadas · Patamares</span>
-      <span class="soon-badge">Em breve</span>
-    </div>
-  </div>
- 
-  <div class="db-card soon">
-    <div class="db-card-top">
-      <div class="db-card-icon" style="background:var(--bg);color:var(--t3)"><i class="ti ti-home-2"></i></div>
-      <div class="db-card-name">Habitação — Áreas mínimas</div>
-      <div class="db-card-desc">Áreas mínimas por compartimento (sala, quartos, cozinha, IS) para tipologias T0 a T6+. Checklist de conformidade por fogo com pré-verificação de plantas carregadas.</div>
-      <div class="db-card-tags">
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--blue-bg);border-color:var(--blue-br);color:var(--blue);border:0.5px solid">🔵 RGEU Art.65–70</span>
+
+    <div class="db-card soon" style="--accent:var(--fs-soft);--accent-bg:var(--fs-card-soft)">
+      <div class="db-card-top">
+        <div class="db-card-icon"><i class="ti ti-home-2"></i></div>
+        <div class="db-card-name">Habitação — Áreas mínimas</div>
+        <div class="db-card-desc">Áreas mínimas por compartimento (sala, quartos, cozinha, IS) para tipologias T0 a T6+. Checklist de conformidade por fogo com pré-verificação de plantas carregadas.</div>
+        <div class="tags">
+          <span class="tag blue">RGEU Art.65–70</span>
+        </div>
+      </div>
+      <div class="db-card-bottom">
+        <span class="db-card-meta">T0 → T6+ · IS · Cozinha · Sala</span>
+        <span class="soon-badge">Em breve</span>
       </div>
     </div>
-    <div class="db-card-bottom">
-      <span class="db-card-meta">T0 → T6+ · IS · Cozinha · Sala</span>
-      <span class="soon-badge">Em breve</span>
-    </div>
-  </div>
- 
-  <div class="db-card soon">
-    <div class="db-card-top">
-      <div class="db-card-icon" style="background:var(--bg);color:var(--t3)"><i class="ti ti-accessibility"></i></div>
-      <div class="db-card-name">Acessibilidades — DL 163/2006</div>
-      <div class="db-card-desc">Guia completo do Decreto-Lei 163/2006: corredores acessíveis, rampas, portas, elevadores e IS acessíveis. Com checklist de análise de planta e sobreposição com SCIE.</div>
-      <div class="db-card-tags">
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--green-bg);border-color:var(--green-br);color:var(--green);border:0.5px solid">🟢 DL 163/2006</span>
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--amber-bg);border-color:var(--amber-br);color:var(--amber);border:0.5px solid">🟠 RT-SCIE</span>
+
+    <div class="db-card soon" style="--accent:var(--fs-soft);--accent-bg:var(--fs-card-soft)">
+      <div class="db-card-top">
+        <div class="db-card-icon"><i class="ti ti-accessibility"></i></div>
+        <div class="db-card-name">Acessibilidades — DL 163/2006</div>
+        <div class="db-card-desc">Guia completo do Decreto-Lei 163/2006: corredores acessíveis, rampas, portas, elevadores e IS acessíveis. Com checklist de análise de planta e sobreposição com SCIE.</div>
+        <div class="tags">
+          <span class="tag green">DL 163/2006</span>
+          <span class="tag orange">RT-SCIE</span>
+        </div>
+      </div>
+      <div class="db-card-bottom">
+        <span class="db-card-meta">Corredores · Rampas · Elevadores · IS</span>
+        <span class="soon-badge">Em breve</span>
       </div>
     </div>
-    <div class="db-card-bottom">
-      <span class="db-card-meta">Corredores · Rampas · Elevadores · IS</span>
-      <span class="soon-badge">Em breve</span>
-    </div>
-  </div>
- 
-  <div class="db-card soon">
-    <div class="db-card-top">
-      <div class="db-card-icon" style="background:var(--bg);color:var(--t3)"><i class="ti ti-sun"></i></div>
-      <div class="db-card-name">Salubridade, Iluminação e Ventilação</div>
-      <div class="db-card-desc">Requisitos de ventilação natural, iluminação mínima por compartimento, afastamentos entre fachadas e entre edifícios. Articulação com REH e RRAE em fase de projeto.</div>
-      <div class="db-card-tags">
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--blue-bg);border-color:var(--blue-br);color:var(--blue);border:0.5px solid">🔵 RGEU Art.71–77</span>
-        <span class="code-pill" style="font-size:10px;padding:2px 8px;background:var(--green-bg);border-color:var(--green-br);color:var(--green);border:0.5px solid">🟢 RRAE · REH</span>
+
+    <div class="db-card soon" style="--accent:var(--fs-soft);--accent-bg:var(--fs-card-soft)">
+      <div class="db-card-top">
+        <div class="db-card-icon"><i class="ti ti-sun"></i></div>
+        <div class="db-card-name">Salubridade, Iluminação e Ventilação</div>
+        <div class="db-card-desc">Requisitos de ventilação natural, iluminação mínima por compartimento, afastamentos entre fachadas e entre edifícios. Articulação com REH e RRAE em fase de projeto.</div>
+        <div class="tags">
+          <span class="tag blue">RGEU Art.71–77</span>
+          <span class="tag green">RRAE · REH</span>
+        </div>
+      </div>
+      <div class="db-card-bottom">
+        <span class="db-card-meta">Pés-direitos · Vãos mínimos · Afastamentos</span>
+        <span class="soon-badge">Em breve</span>
       </div>
     </div>
-    <div class="db-card-bottom">
-      <span class="db-card-meta">Pés-direitos · Vãos mínimos · Afastamentos</span>
-      <span class="soon-badge">Em breve</span>
-    </div>
+
   </div>
- 
-</div>
- 
-<!-- ── CÓDIGO DE CORES ── -->
-<div class="sec-wrap">
+
+  <!-- ── CÓDIGO DE CORES ── -->
   <div class="sec-label">Código de cores legislativo</div>
-</div>
-<div class="legend-wrap" style="padding-bottom:48px">
   <div class="legend-grid">
     <div class="legend-card">
       <div class="legend-emoji">🔵</div>
@@ -372,20 +423,42 @@ footer{border-top:0.5px solid var(--bd);background:var(--card);padding:20px;text
       </div>
     </div>
   </div>
-</div>
- 
+
+  <div style="height:20px"></div>
+  <div class="alert">
+    <i class="ti ti-alert-triangle"></i>
+    <div class="alert-text"><strong>Ambiente de demonstração (WIP).</strong> Os valores apresentados são de referência técnica e não substituem a consulta do diploma legal em vigor nem o parecer da entidade licenciadora.</div>
+  </div>
+
+</div><!-- /shell -->
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="foot-inner">
     <div class="foot-l">
-      <strong>Hub de Dashboards BIM</strong> - Tudo num só ambiente - Departamento BIM <br>
+      <strong>Hub de Dashboards BIM</strong> — Tudo num só ambiente — Departamento BIM<br>
       Baseado primariamente no RGEU (DL 38382/1951). Fontes alternativas sempre citadas.
     </div>
     <div class="foot-r">Atualizado jul-2026</div>
   </div>
 </footer>
- 
+
+<!-- ── VISUALIZADOR DE DASHBOARD LOCAL ── -->
+<input type="file" id="dbFile" accept=".html,.htm,text/html" style="display:none" onchange="openLocalDashboard(event)">
+<div class="viewer" id="viewer" aria-hidden="true">
+  <div class="viewer-bar">
+    <div class="viewer-name"><i class="ti ti-file-code"></i><small>Local</small><span id="viewerName"></span></div>
+    <div class="viewer-actions">
+      <button class="viewer-btn" onclick="pickLocalDashboard()"><i class="ti ti-refresh"></i> Trocar ficheiro</button>
+      <button class="viewer-btn" onclick="viewerNewTab()"><i class="ti ti-external-link"></i> Abrir em nova aba</button>
+      <button class="viewer-btn close" onclick="closeViewer()"><i class="ti ti-x"></i> Fechar</button>
+    </div>
+  </div>
+  <iframe class="viewer-frame" id="viewerFrame" title="Pré-visualização do dashboard local"></iframe>
+</div>
+
 <script>
+/* ── Drawer mobile ── */
 function toggleDrawer(){
   var d=document.getElementById('drawer');
   var ic=document.getElementById('ham-icon');
@@ -398,6 +471,48 @@ function closeDrawer(e){
     document.getElementById('ham-icon').className='ti ti-menu-2';
   }
 }
+
+/* ── Abrir e renderizar dashboard local ── */
+var currentBlobUrl=null;
+function pickLocalDashboard(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('ham-icon').className='ti ti-menu-2';
+  document.getElementById('dbFile').click();
+}
+function openLocalDashboard(e){
+  var file=e.target.files&&e.target.files[0];
+  if(!file){return;}
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    if(currentBlobUrl){URL.revokeObjectURL(currentBlobUrl);}
+    var blob=new Blob([ev.target.result],{type:'text/html'});
+    currentBlobUrl=URL.createObjectURL(blob);
+    var frame=document.getElementById('viewerFrame');
+    frame.src=currentBlobUrl;
+    document.getElementById('viewerName').textContent=file.name;
+    var v=document.getElementById('viewer');
+    v.classList.add('open');
+    v.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  };
+  reader.onerror=function(){alert('Não foi possível ler o ficheiro selecionado.');};
+  reader.readAsText(file,'UTF-8');
+  /* permite reabrir o mesmo ficheiro */
+  e.target.value='';
+}
+function closeViewer(){
+  var v=document.getElementById('viewer');
+  v.classList.remove('open');
+  v.setAttribute('aria-hidden','true');
+  document.getElementById('viewerFrame').src='about:blank';
+  document.body.style.overflow='';
+}
+function viewerNewTab(){
+  if(currentBlobUrl){window.open(currentBlobUrl,'_blank');}
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&document.getElementById('viewer').classList.contains('open')){closeViewer();}
+});
 </script>
 </body>
 </html>
