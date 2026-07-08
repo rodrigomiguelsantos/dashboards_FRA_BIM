@@ -1,0 +1,57 @@
+SISTEMA DE UI — "FRAGMENTOS DASHBOARDS" (referência de design)
+
+CONTEXTO
+Constrói dashboards/hubs web em HTML + CSS + JS vanilla (sem frameworks),
+self-contained e prontos para GitHub Pages. Idioma PT-PT, tom técnico e sóbrio.
+Layout responsivo, grids auto-fit minmax(~330px), tudo inline no ficheiro.
+
+TIPOGRAFIA — Museo Sans (self-hosted via @font-face, .ttf/.otf;
+fallback: Inter, 'Segoe UI', system-ui)
+• Peso 100 → corpo de texto, labels, descrições
+• Peso 300 → títulos, UI (nav, chips, tags, valores de tabela)
+• Peso 500 → títulos grandes e números-chave/KPIs  (700 disponível p/ ênfase)
+• Tamanhos: base 13px (line-height 1.5) · Hero H1 32px (-.03em) · título de
+  cartão 15px · descrição 12px · nav 14px · secção/eyebrow 10–11px MAIÚSCULAS
+  com letter-spacing .06–.09em · tags 9–10px · KPI 26px
+
+COR
+• Fundos: BRANCO PURO #FFFFFF (páginas, cartões, barras, painéis) — sem beges/gradientes
+• Bordas: #E6E0D6 (forte #D9D0C4) — dão separação sobre branco (não usar fundo cinza nos cartões)
+• Hover / estado neutro: #F2F3F5
+• Texto: #373532 (forte) · #74706A (secundário) · #9B968F (ténue)
+• AZUL DA MARCA (Fragmentos), destaques/títulos: #0066FF
+• Paleta semântica p/ tags e estados  (fundo / borda / texto):
+   azul   #EAF2FF / #ABC5EE / #2F5E9F
+   verde  #EDF7E7 / #ACD197 / #477534
+   laranja#FFF0DF / #DDB67D / #7D5930
+   amarelo#FFF8D9 / #E3CA69 / #7A6718
+   vermelho #FDECED / — / #A84E4E
+   roxo   #EEEDFB / #C3BEF0 / #3F3A86
+   teal   #E3F4EE / #98D3C1 / #20705C
+• Sombra: 0 8px 26px rgba(77,67,55,.06)  (hover: 0 12px 30px rgba(77,67,55,.10))
+• Raio: cartões 13px · caixas pequenas 8–11px · pills/chips/botões 999px
+
+LOGO
+Wordmark "FRAGMENTOS" empilhado, preto, em /assets (PNG ou SVG),
+altura ~50px, sobre barra branca.
+
+COMPONENTES
+• Top bar da home: sticky, branco translúcido + backdrop-blur, ~76px;
+  logo à esquerda, botões-pill à direita.
+• Top bar dentro de dashboard: sticky; botão "← Home" + ícone da marca + título.
+• Cartões: fundo branco, borda 1px, borda-esquerda de acento 4–5px (cor de
+  categoria), sombra suave, hover translateY(-1px). Dashboards de dados = 2
+  colunas: info à esquerda / valores (linhas label→valor→badge) à direita.
+• Tags/chips: pill com ponto colorido antes, cores da paleta semântica.
+• Badges de estado: ok=verde · warn=laranja/amarelo · bad=vermelho.
+• Filtros: chips-pill; ativo = fill escuro #373532 com texto branco.
+• Slide menu (drawer da direita): overlay escurecido + painel a deslizar;
+  secções (label MAIÚSCULO ténue) + itens (ícone em caixa 34px + nome 13px/300
+  + descrição 11px/100 + badge). Fecha com ✕, Esc ou clique fora.
+• Visualizador de ficheiro local: <input type=file> → FileReader → Blob →
+  iframe em modal (100% client-side, nada é enviado para servidor).
+• Ícones: Tabler Icons (webfont via CDN).
+
+REGRAS
+Transições .12–.18s; sem gradientes bege; contraste dado por bordas, não por
+fundos; foco em legibilidade e hierarquia clara (100→300→500).
