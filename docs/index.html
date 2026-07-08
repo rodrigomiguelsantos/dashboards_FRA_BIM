@@ -37,7 +37,7 @@ body{background:var(--fs-bg);color:var(--fs-text);font-family:var(--font);font-s
 
 /* ── NAV ── */
 nav{background:rgba(255,254,250,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--fs-line);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(77,67,55,.03)}
-.nav-inner{max-width:1120px;margin:0 auto;padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-inner{max-width:none;margin:0;padding:0 clamp(20px,3vw,48px);height:54px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
 .nav-brand-icon{width:31px;height:31px;background:var(--fs-dark);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fffefa;font-size:15px;flex-shrink:0}
 .nav-brand-text{font-size:13px;font-weight:500;color:var(--fs-dark);line-height:1.2;letter-spacing:-.01em}
@@ -52,7 +52,7 @@ nav{background:rgba(255,254,250,.92);backdrop-filter:blur(10px);border-bottom:1p
 .hamburger:hover{background:var(--fs-card-soft)}
 
 /* ── layout shell ── */
-.shell{max-width:1120px;margin:0 auto;padding:0 20px;background:linear-gradient(180deg,#fcfbf8 0%,#f8f6f1 100%)}
+.shell{max-width:none;margin:0;padding:0 clamp(20px,3vw,48px);background:linear-gradient(180deg,#fcfbf8 0%,#f8f6f1 100%)}
 
 /* ── HERO ── */
 .hero{padding:46px 0 30px}
@@ -80,7 +80,7 @@ nav{background:rgba(255,254,250,.92);backdrop-filter:blur(10px);border-bottom:1p
 .sec-label::after{content:'';flex:1;height:1px;background:var(--fs-line)}
 
 /* ── DASHBOARD GRID ── */
-.db-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px;padding-bottom:34px}
+.db-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:10px;padding-bottom:34px}
 .db-card{--accent:var(--fs-blue);--accent-bg:var(--fs-blue-bg);background:linear-gradient(135deg,#fffefa 0%,#fffefa 58%,#faf8f3 100%);border:1px solid var(--fs-line);border-left:5px solid var(--accent);border-radius:var(--fs-radius);overflow:hidden;box-shadow:var(--fs-shadow);transition:transform .18s,border-color .18s,box-shadow .18s;text-decoration:none;display:flex;flex-direction:column;cursor:pointer;font-family:inherit;text-align:left;padding:0}
 .db-card:hover{transform:translateY(-1px);border-color:#d6ccbe;box-shadow:0 12px 30px rgba(77,67,55,.1)}
 .db-card-top{padding:18px 20px 14px;flex:1}
@@ -109,7 +109,7 @@ nav{background:rgba(255,254,250,.92);backdrop-filter:blur(10px);border-bottom:1p
 .db-card.open-local .db-card-icon{background:var(--fs-dark);color:#fffefa}
 
 /* ── LEGEND ── */
-.legend-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;padding-bottom:20px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:8px;padding-bottom:20px}
 .legend-card{background:var(--fs-card);border:1px solid var(--fs-line);border-radius:var(--fs-radius);padding:14px 16px;display:flex;align-items:flex-start;gap:11px;box-shadow:0 3px 12px rgba(77,67,55,.03)}
 .legend-emoji{font-size:18px;flex-shrink:0;margin-top:1px}
 .legend-title{font-size:12px;font-weight:300;color:#46433f;margin-bottom:3px}
@@ -123,7 +123,7 @@ nav{background:rgba(255,254,250,.92);backdrop-filter:blur(10px);border-bottom:1p
 
 /* ── FOOTER ── */
 footer{border-top:1px solid var(--fs-line);background:var(--fs-card);padding:22px 20px;margin-top:8px}
-.foot-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.foot-inner{max-width:none;margin:0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .foot-l{font-size:11px;font-weight:100;color:var(--fs-soft);line-height:1.6}
 .foot-l strong{color:var(--fs-muted);font-weight:300}
 .foot-r{font-size:11px;font-weight:100;color:var(--fs-soft)}
@@ -296,75 +296,6 @@ footer{border-top:1px solid var(--fs-line);background:var(--fs-card);padding:22p
         <i class="ti ti-upload db-card-arrow"></i>
       </div>
     </button>
-
-  </div>
-
-  <!-- ── EM DESENVOLVIMENTO ── -->
-  <div class="sec-label">Em desenvolvimento</div>
-  <div class="db-grid">
-
-    <div class="db-card soon" style="--accent:var(--fs-soft);--accent-bg:var(--fs-card-soft)">
-      <div class="db-card-top">
-        <div class="db-card-icon"><i class="ti ti-stairs"></i></div>
-        <div class="db-card-name">Circulações — RGEU</div>
-        <div class="db-card-desc">Larguras mínimas de corredores, escadas, patamares e comunicações verticais. Tabelas de conformidade por tipo de edifício e ocupação, com sobreposição DL 163/2006.</div>
-        <div class="tags">
-          <span class="tag blue">RGEU Art.45–47 · 70</span>
-          <span class="tag green">DL 163/2006</span>
-        </div>
-      </div>
-      <div class="db-card-bottom">
-        <span class="db-card-meta">Corredores · Escadas · Patamares</span>
-        <span class="soon-badge">Em breve</span>
-      </div>
-    </div>
-
-    <div class="db-card soon" style="--accent:var(--fs-soft);--accent-bg:var(--fs-card-soft)">
-      <div class="db-card-top">
-        <div class="db-card-icon"><i class="ti ti-home-2"></i></div>
-        <div class="db-card-name">Habitação — Áreas mínimas</div>
-        <div class="db-card-desc">Áreas mínimas por compartimento (sala, quartos, cozinha, IS) para tipologias T0 a T6+. Checklist de conformidade por fogo com pré-verificação de plantas carregadas.</div>
-        <div class="tags">
-          <span class="tag blue">RGEU Art.65–70</span>
-        </div>
-      </div>
-      <div class="db-card-bottom">
-        <span class="db-card-meta">T0 → T6+ · IS · Cozinha · Sala</span>
-        <span class="soon-badge">Em breve</span>
-      </div>
-    </div>
-
-    <div class="db-card soon" style="--accent:var(--fs-soft);--accent-bg:var(--fs-card-soft)">
-      <div class="db-card-top">
-        <div class="db-card-icon"><i class="ti ti-accessibility"></i></div>
-        <div class="db-card-name">Acessibilidades — DL 163/2006</div>
-        <div class="db-card-desc">Guia completo do Decreto-Lei 163/2006: corredores acessíveis, rampas, portas, elevadores e IS acessíveis. Com checklist de análise de planta e sobreposição com SCIE.</div>
-        <div class="tags">
-          <span class="tag green">DL 163/2006</span>
-          <span class="tag orange">RT-SCIE</span>
-        </div>
-      </div>
-      <div class="db-card-bottom">
-        <span class="db-card-meta">Corredores · Rampas · Elevadores · IS</span>
-        <span class="soon-badge">Em breve</span>
-      </div>
-    </div>
-
-    <div class="db-card soon" style="--accent:var(--fs-soft);--accent-bg:var(--fs-card-soft)">
-      <div class="db-card-top">
-        <div class="db-card-icon"><i class="ti ti-sun"></i></div>
-        <div class="db-card-name">Salubridade, Iluminação e Ventilação</div>
-        <div class="db-card-desc">Requisitos de ventilação natural, iluminação mínima por compartimento, afastamentos entre fachadas e entre edifícios. Articulação com REH e RRAE em fase de projeto.</div>
-        <div class="tags">
-          <span class="tag blue">RGEU Art.71–77</span>
-          <span class="tag green">RRAE · REH</span>
-        </div>
-      </div>
-      <div class="db-card-bottom">
-        <span class="db-card-meta">Pés-direitos · Vãos mínimos · Afastamentos</span>
-        <span class="soon-badge">Em breve</span>
-      </div>
-    </div>
 
   </div>
 
